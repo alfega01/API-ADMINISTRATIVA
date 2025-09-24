@@ -1,0 +1,159 @@
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f9fc;
+    color: #333;
+  }
+
+  /* Header */
+  header {
+    text-align: center;
+    background-color: #fff;
+    padding: 15px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-bottom: 2px solid #e0e0e0;
+  }
+
+  /* Layout */
+  main {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 30px;
+    padding: 30px;
+    max-width: 1200px;
+    margin: auto;
+    align-items: start;
+  }
+
+/* ==== Carrusel ==== */
+.carrusel {
+  width: 100%;
+  max-width: 600px;
+  overflow: hidden;
+  border-radius: 10px;
+  margin: auto;
+  position: relative;
+}
+
+.sliders {
+  display: flex;
+  animation: deslizar 12s infinite ease-in-out;
+}
+
+.sliders img {
+  flex: 0 0 198%; /* cada imagen ocupa el 100% del carrusel */
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+/* Animación automática */
+@keyframes deslizar {
+  0%   { transform: translateX(0); }
+  30%  { transform: translateX(0); }
+
+  35%  { transform: translateX(-100%); }
+  65%  { transform: translateX(-100%); }
+
+  70%  { transform: translateX(-200%); }
+  95%  { transform: translateX(-200%); }
+
+  100% { transform: translateX(0); }
+}
+
+
+
+  /* ====== Sección Administración ====== */
+  .menu {
+    background: #fff;
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  }
+
+  .menu h2 {
+    margin-bottom: 25px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #222;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+      ". c1 c2"
+      "c3 c4 c5";
+    gap: 20px;
+    justify-items: center;
+  }
+
+  .grid a:nth-child(1) { grid-area: c1; }
+  .grid a:nth-child(2) { grid-area: c2; }
+  .grid a:nth-child(3) { grid-area: c3; }
+  .grid a:nth-child(4) { grid-area: c4; }
+  .grid a:nth-child(5) { grid-area: c5; }
+
+  /* Cuadros */
+  .cuadro {
+    width: 140px;
+    height: 100px;
+    background-color: #f1f5ff;
+    border: 2px solid #4a6cf7;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    color: #4a6cf7;
+    transition: all 0.3s ease;
+    text-decoration: none; /* QUITA SUBRAYADO */
+  }
+  .cuadro:hover {
+    background-color: #4a6cf7;
+    color: #fff;
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+
+  /* ====== Lateral ====== */
+  .lateral {
+    text-align: center;
+  }
+
+  .logo {
+    width: 120px;
+    height: 120px;
+    border: 2px solid #ddd;
+    border-radius: 12px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+
+  .opcion {
+    display: block;
+    background: #fff;
+    border: 2px solid #4a6cf7;
+    border-radius: 8px;
+    padding: 12px;
+    margin: 10px 0;
+    text-decoration: none;
+    color: #4a6cf7;
+    font-weight: 600;
+    text-align: center;
+    transition: 0.3s;
+  }
+  .opcion:hover {
+    background-color: #4a6cf7;
+    color: #fff;
+  }

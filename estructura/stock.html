@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestión de Stock</title>
+  <link rel="stylesheet" href="../Frontend/Stock.css    ">
+</head>
+<body>
+  <div class="container">
+    <h1>Registro de Productos en Stock</h1>
+
+    <form id="form-stock">
+      <label for="codigo">Código del producto:</label>
+      <input type="text" id="codigo" name="codigo" required>
+
+      <label for="nombre">Nombre del producto:</label>
+      <input type="text" id="nombre" name="nombre" required>
+
+      <label for="categoria">Categoría:</label>
+      <input type="text" id="categoria" name="categoria">
+
+      <label for="cantidad">Cantidad disponible:</label>
+      <input type="number" id="cantidad" name="cantidad" required>
+
+      <label for="precio">Precio unitario:</label>
+      <input type="number" id="precio" name="precio" required>
+
+      <button type="submit" class="btn">Guardar Producto</button>
+    </form>
+  </div>
+</body>
+</html>

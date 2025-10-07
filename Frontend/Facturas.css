@@ -1,0 +1,57 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f7fa;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 700px;
+  margin: 100px auto;
+  background: #fff;
+  padding: 40px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
+}
+
+h1 {
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.sub {
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.btn-group {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.btn {
+  text-decoration: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.compras {
+  background: #17a2b8;
+}
+
+.compras:hover {
+  background: #11707f;
+}
+
+.ventas {
+  background: #28a745;
+}
+
+.ventas:hover {
+  background: #1e7e34;
+}

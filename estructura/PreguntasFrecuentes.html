@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preguntas Frecuentes - Ayuda</title>
+  <link rel="stylesheet" href="../Frontend/PreguntasFrecuentes.css">
+</head>
+<body>
+  <div class="faq-container">
+    <h1>❓ Preguntas Frecuentes</h1>
+    <p class="intro">Aquí encontrarás respuestas a las dudas más comunes sobre el uso del sistema administrativo. Si no encuentras lo que buscas, ¡contáctanos! 💬</p>
+
+    <div class="faq-grid">
+      <!-- FAQ 1 -->
+      <div class="faq-item">
+        <div class="faq-header">
+          <h2>💼 ¿Cómo registro una nueva factura?</h2>
+          <span class="icon">+</span>
+        </div>
+        <div class="faq-body">
+          <p>Para registrar una factura nueva, dirígete al apartado <strong>Facturas</strong> y selecciona si deseas ingresar una <em>compra</em> o una <em>venta</em>. Completa el formulario y guarda los datos.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 2 -->
+      <div class="faq-item">
+        <div class="faq-header">
+          <h2>🧾 ¿Puedo editar una factura ya registrada?</h2>
+          <span class="icon">+</span>
+        </div>
+        <div class="faq-body">
+          <p>Sí, puedes hacerlo desde el listado de facturas. Selecciona la factura que quieras modificar y haz clic en <strong>Editar</strong>. Recuerda guardar los cambios antes de salir.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 3 -->
+      <div class="faq-item">
+        <div class="faq-header">
+          <h2>📦 ¿Cómo agrego nuevos productos al inventario?</h2>
+          <span class="icon">+</span>
+        </div>
+        <div class="faq-body">
+          <p>Ve al apartado <strong>Stock</strong> y completa el formulario con el código, nombre, categoría, cantidad y precio del producto. Luego presiona <strong>Guardar Producto</strong>.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 4 -->
+      <div class="faq-item">
+        <div class="faq-header">
+          <h2>👥 ¿Puedo registrar varios clientes al mismo tiempo?</h2>
+          <span class="icon">+</span>
+        </div>
+        <div class="faq-body">
+          <p>Actualmente los clientes deben registrarse uno a uno desde la sección <strong>Clientes</strong>. Sin embargo, en futuras versiones se permitirá cargar listas desde archivos Excel. ✨</p>
+        </div>
+      </div>
+
+      <!-- FAQ 5 -->
+      <div class="faq-item">
+        <div class="faq-header">
+          <h2>📊 ¿Cómo genero un informe de ventas?</h2>
+          <span class="icon">+</span>
+        </div>
+        <div class="faq-body">
+          <p>Desde la sección <strong>Informes</strong>, selecciona la fecha de inicio y fin del periodo que deseas consultar. El sistema mostrará los resultados y podrás exportarlos a Excel. 📈</p>
+        </div>
+      </div>
+
+      <!-- FAQ 6 -->
+      <div class="faq-item">
+        <div class="faq-header">
+          <h2>💬 ¿Dónde puedo pedir soporte técnico?</h2>
+          <span class="icon">+</span>
+        </div>
+        <div class="faq-body">
+          <p>Puedes escribirnos directamente desde la sección de <strong>Contacto</strong> o enviar un correo a <a href="mailto:soporte@tusistema.com">soporte@tusistema.com</a>. Estamos disponibles de lunes a viernes. 💖</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Animación de acordeones
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+      const header = item.querySelector('.faq-header');
+      header.addEventListener('click', () => {
+        item.classList.toggle('active');
+        const icon = header.querySelector('.icon');
+        icon.textContent = item.classList.contains('active') ? '−' : '+';
+      });
+    });
+  </script>
+</body>
+</html>

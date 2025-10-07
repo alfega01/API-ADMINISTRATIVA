@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Facturas de Compras</title>
+  <link rel="stylesheet" href="../Frontend/Compras.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Registrar Factura de Compra</h1>
+
+    <form id="form-compras">
+      <label for="proveedor">Proveedor:</label>
+      <input type="text" id="proveedor" name="proveedor" required>
+
+      <label for="fecha">Fecha:</label>
+      <input type="date" id="fecha" name="fecha" required>
+
+      <label for="monto">Monto:</label>
+      <input type="number" id="monto" name="monto" required>
+
+      <label for="detalle">Detalle de productos:</label>
+      <textarea id="detalle" name="detalle" rows="4"></textarea>
+
+      <button type="submit" class="btn">Guardar Compra</button>
+    </form>
+  </div>
+</body>
+</html>

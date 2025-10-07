@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Informes - Administración</title>
+  <link rel="stylesheet" href="../Frontend/informes.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Generar Informe de Facturas</h1>
+
+    <!-- Filtros -->
+    <form id="form-informe">
+      <label for="fecha-inicio">Desde:</label>
+      <input type="date" id="fecha-inicio" name="fechaInicio" required>
+
+      <label for="fecha-fin">Hasta:</label>
+      <input type="date" id="fecha-fin" name="fechaFin" required>
+
+      <button type="submit" class="btn">Generar Informe</button>
+    </form>
+
+    <!-- Tabla de resultados -->
+    <div id="resultado">
+      <h2>Resultados</h2>
+      <table id="tabla-informe">
+        <thead>
+          <tr>
+            <th>ID Factura</th>
+            <th>Cliente</th>
+            <th>Fecha</th>
+            <th>Monto</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Aquí se inyectan los datos -->
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Botón exportar -->
+    <button id="btn-excel" class="btn export">Exportar a Excel</button>
+  </div>
+
+  <script>
+    const form = document.getElementById("form-informe");
+    const tablaBody = document.querySelector("#tabla-informe tbody");
+
+    // Simulación de API de facturas (aquí vas a conectar tu API real)
+    const facturas = [
+      {id: 1, cliente: "Juan Pérez", fecha: "2025-09-20", monto: 250000},
+      {id: 2, cliente: "Ana Gómez", fecha: "2025-09-25", monto: 180000},
+      {id: 3, cliente: "Carlos Ruiz", fecha: "2025-09-28", monto: 400000}
+    ];
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      tablaBody.innerHTML = ""; // limpiar
+
+      const inicio = document.getElementById("fecha-inicio").value;
+      const fin = document.getElementById("fecha-fin").value;
+
+      // Filtrar facturas por rango de fechas
+      const resultados = facturas.filter(f => f.fecha >= inicio && f.fecha <= fin);
+
+      resultados.forEach(f => {
+        const fila = `
+          <tr>
+            <td>${f.id}</td>
+            <td>${f.cliente}</td>
+            <td>${f.fecha}</td>
+            <td>$${f.monto.toLocaleString()}</td>
+          </tr>
+        `;
+        tablaBody.innerHTML += fila;
+      });
+    });
+
+    // Exportar a Excel
+    document.getElementById("btn-excel").addEventListener("click", () => {
+      const tabla = document.getElementById("tabla-informe").outerHTML;
+      const data = new Blob([tabla], {type: "application/vnd.ms-excel"});
+      const url = URL.createObjectURL(data);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "informe_facturas.xls";
+      a.click();
+    });
+  </script>
+</body>
+</html>

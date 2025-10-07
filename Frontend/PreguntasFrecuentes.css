@@ -1,0 +1,101 @@
+body {
+  font-family: "Poppins", Arial, sans-serif;
+  background: linear-gradient(180deg, #fef6ff 0%, #eaf8ff 100%);
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+.faq-container {
+  max-width: 900px;
+  margin: 50px auto;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0px 6px 20px rgba(0,0,0,0.1);
+  padding: 40px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.2em;
+  margin-bottom: 10px;
+  color: #4a0072;
+}
+
+.intro {
+  text-align: center;
+  color: #666;
+  font-size: 1em;
+  margin-bottom: 40px;
+}
+
+.faq-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.faq-item {
+  background: #f9f9ff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.faq-item:hover {
+  transform: scale(1.01);
+}
+
+.faq-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 20px;
+  background: #ececff;
+  border-bottom: 1px solid #ddd;
+}
+
+.faq-header h2 {
+  font-size: 1.1em;
+  margin: 0;
+  color: #333;
+}
+
+.icon {
+  font-size: 1.4em;
+  font-weight: bold;
+  color: #7b2cbf;
+}
+
+.faq-body {
+  display: none;
+  padding: 20px;
+  background: #fff;
+  animation: slideDown 0.3s ease-in-out;
+}
+
+.faq-item.active .faq-body {
+  display: block;
+}
+
+@keyframes slideDown {
+  from {opacity: 0; transform: translateY(-10px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+a {
+  color: #7b2cbf;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}

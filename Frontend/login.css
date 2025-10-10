@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle at top left, #1e1e2f, #121212);
+    overflow: hidden;
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.login-box {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    padding: 3rem 2.5rem;
+    border-radius: 20px;
+    width: 350px;
+    color: white;
+    text-align: center;
+    animation: fadeIn 1s ease;
+    box-shadow: 0 0 20px rgba(255,255,255,0.1);
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: .5rem;
+}
+
+.subtitle {
+    font-size: .9rem;
+    opacity: .8;
+    margin-bottom: 2rem;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px 5px;
+    border: none;
+    border-bottom: 2px solid #888;
+    background: transparent;
+    color: #fff;
+    font-size: 1rem;
+    outline: none;
+    transition: .3s;
+}
+
+.input-group label {
+    position: absolute;
+    left: 5px;
+    top: 10px;
+    color: #aaa;
+    font-size: 1rem;
+    pointer-events: none;
+    transition: .3s ease;
+}
+
+.input-group input:focus + label,
+.input-group input:valid + label {
+    top: -10px;
+    font-size: .8rem;
+    color: #ff6bcb;
+}
+
+.input-group input:focus {
+    border-color: #ff6bcb;
+}
+
+.btn-login {
+    width: 100%;
+    padding: 10px;
+    background: linear-gradient(45deg, #ff6bcb, #857dff);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.btn-login:hover {
+    transform: scale(1.05);
+    background: linear-gradient(45deg, #ff85d8, #9a91ff);
+}
+
+#mensaje-error {
+    color: #ff7373;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+    opacity: 0;
+    transition: opacity .5s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}

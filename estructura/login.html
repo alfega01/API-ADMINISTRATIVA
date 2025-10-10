@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión | AdminNegocios</title>
+    <link rel="stylesheet" href="../Frontend/login.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <h1 class="title">Bienvenido</h1>
+            <p class="subtitle">Inicia sesión para continuar</p>
+
+            <form id="loginForm">
+                <div class="input-group">
+                    <input type="text" id="usuario" required>
+                    <label for="usuario">Usuario</label>
+                </div>
+
+                <div class="input-group">
+                    <input type="password" id="password" required>
+                    <label for="password">Contraseña</label>
+                </div>
+
+                <button type="submit" class="btn-login">Entrar</button>
+
+                <p id="mensaje-error"></p>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const form = document.getElementById('loginForm');
+        const mensajeError = document.getElementById('mensaje-error');
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            const usuario = document.getElementById('usuario').value.trim();
+            const password = document.getElementById('password').value.trim();
+
+            if (!usuario || !password) {
+                mensajeError.textContent = "Por favor, completa todos los campos.";
+                mensajeError.style.opacity = 1;
+                return;
+            }
+
+            // Aquí iría la validación real (cuando tengas el backend listo)
+            if (usuario === "admin" && password === "1234") {
+                window.location.href = "admin.html";
+            } else {
+                mensajeError.textContent = "Usuario o contraseña incorrectos.";
+                mensajeError.style.opacity = 1;
+            }
+        });
+    </script>
+</body>
+</html>
